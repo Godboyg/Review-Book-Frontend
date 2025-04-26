@@ -13,6 +13,7 @@ function AddBook({ visible }) {
     const [ description , setDescription ] = useState()
     const [ rating , setRating ] = useState(0)
 
+    const api = import.meta.env.VITE_URL;
 
     const handleBook = async(e) => {
         e.preventDefault();
@@ -23,7 +24,7 @@ function AddBook({ visible }) {
             setRating('');
             const data = { title , auther , description , rating };
             console.log(data);
-            const res = await axios.post("/api/books",{data});
+            const res = await axios.post(`${api}/books`,{data});
             console.log("book added",res);
             toast.success("Book Added" , { position:"top-right" , autoClose: 1200 , onClose : () => window.location.reload() })
         }catch(err){
