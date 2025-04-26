@@ -6,10 +6,12 @@ const initialState = {
   error :null
 };
 
+const api = import.meta.env.VITE_URL;
+
 export const LoginUser = createAsyncThunk(
     'loginUser',
     async ({ name }) => {
-      const response = await fetch(`/api/login`, {
+      const response = await fetch(`${api}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name }),
