@@ -86,7 +86,7 @@ function Home() {
     <div className="p-6 max-w-6xl mx-auto">
       <div className="relative flex items-center justify-between bg-black p-3">
        <h1 className="text-3xl max-sm:text-2xl font-black hover:cursor-pointer" onClick={() => window.location.reload()}>📚 Featured Books</h1>
-       <div className="h-12 p-4 hover:cursor-pointer w-12 rounded-full text-black bg-cyan-400 flex items-center justify-center" onClick={() => navigate(`/user/${user._id}`)}>
+       <div className="h-12 p-4 hover:cursor-pointer w-12 rounded-full text-black bg-cyan-400 flex items-center justify-center font-bold" onClick={() => navigate(`/user/${user._id}`)}>
         Profile
        </div>
        <div className="text-xl flex items-center justify-center p-3 max-sm:text-[4.5vw] font-bold hover:cursor-pointer border border-cyan-400 rounded-md" onClick={handleAddBook}>Add Book</div>
