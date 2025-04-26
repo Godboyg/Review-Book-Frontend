@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+const api = import.meta.env.VITE_URL;
+
 export const fetchBookDetails = createAsyncThunk(
   'book/fetchBookDetails',
   async (bookId) => {
-    const response = await fetch(`/api/${bookId}`);
+    const response = await fetch(`${api}/${bookId}`);
     if (!response.ok) throw new Error('Failed to fetch book details');
     const res = await response.json();
     console.log(res);
@@ -14,7 +16,7 @@ export const fetchBookDetails = createAsyncThunk(
 export const addReview = createAsyncThunk(
     'book/addReview',
     async ({ bookId, review }) => {
-      const response = await fetch(`/api/addReviews`, {
+      const response = await fetch(`${api}/addReviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ bookId, ...review }),
