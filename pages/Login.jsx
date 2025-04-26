@@ -23,7 +23,7 @@ function Login() {
         }else{
             navigate("/");
         }
-    },[])
+    },[handleLogin])
 
   return (
     <>
