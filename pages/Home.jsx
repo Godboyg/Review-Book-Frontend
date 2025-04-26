@@ -25,10 +25,12 @@ function Home() {
       }
     },[])
 
+    const api = import.meta.env.VITE_URL;
+
   useEffect(() => {
     const fetchFeaturedBooks = async () => {
       try {
-        const res = await fetch('/api/books?limit=10');
+        const res = await fetch(`${api}/books?limit=10`);
         const data = await res.json();
         console.log("data",data.books);
         if (res.ok) setBooks(data.books || []);
@@ -46,7 +48,7 @@ function Home() {
   }, []);
 
     useEffect(()=>{
-        axios.get("/api/").then((res)=>{
+        axios.get(`${api}/`).then((res)=>{
             console.log("response",res);
         })
     },[])
@@ -71,7 +73,7 @@ function Home() {
     useEffect(()=>{
 
       const res = async() => {
-        const response = await axios.post("/api/book",{ title : search });
+        const response = await axios.post(`${api}/book`,{ title : search });
         if (response.ok === undefined) setBooks(response.data || []);
       }
 
