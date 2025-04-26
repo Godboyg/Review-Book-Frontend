@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+body{
+    /* background-color: rgba(0, 0, 0, 0.407); */
+    /* background-color: #f4f4f4; */
+    /* background-color: #121212; */
+    /* background-color: #f9fafb; */
+    /* background-color: #e0f2f1; */
+    background: linear-gradient(120deg, #667eea, #764ba2);
+    color: white;
+}
