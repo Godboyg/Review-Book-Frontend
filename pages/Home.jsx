@@ -60,6 +60,7 @@ function Home() {
 
     const handleCheckPass = (e) => {
       e.preventDefault()
+        setPassword("");
       if(password === "admin_here"){
         console.log("correct password");
         alert("U Can Add Books");
