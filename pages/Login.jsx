@@ -17,14 +17,15 @@ function Login() {
         // window.location.reload();
     }
 
-    useEffect(() => {
-        if(isAuthenticated){
-            console.log("ture",isAuthenticated)
-            navigate("/home")
-        }else{
-            navigate("/");
-        }
-    },[])
+    // useEffect(() => {
+        
+    // },[])
+    if(isAuthenticated){
+        console.log("ture",isAuthenticated)
+        navigate("/home")
+    }else{
+        navigate("/");
+    }
 
   return (
     <>
