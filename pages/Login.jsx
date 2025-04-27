@@ -14,6 +14,7 @@ function Login() {
     const handleLogin = () => {
         dispatch(LoginUser({ name : name }));
         navigate("/home");
+        // window.location.reload();
     }
 
     useEffect(() => {
@@ -23,7 +24,7 @@ function Login() {
         }else{
             navigate("/");
         }
-    },[handleLogin])
+    },[])
 
   return (
     <>
