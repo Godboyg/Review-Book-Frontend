@@ -27,7 +27,9 @@ const BookPage = () => {
     dispatch(addReview({ bookId: id, review: reviewData }));
     setNewReview('');
     setNewRating(5);
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    },2000)
   };
 
   if (allState.loading) return <div>Loading...</div>;
