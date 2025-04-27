@@ -14,7 +14,7 @@ function Login() {
     const handleLogin = () => {
         dispatch(LoginUser({ name : name }));
         navigate("/home");
-        window.location.reload();
+        // window.location.reload();
     }
 
     useEffect(() => {
