@@ -20,12 +20,14 @@ function Login() {
     // useEffect(() => {
         
     // },[])
-    if(isAuthenticated){
+    setTimeout(() => {
+        if(isAuthenticated){
         console.log("ture",isAuthenticated)
         navigate("/home")
     }else{
         navigate("/");
     }
+    },2000)
 
   return (
     <>
