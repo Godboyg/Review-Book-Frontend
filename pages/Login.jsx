@@ -17,17 +17,18 @@ function Login() {
         // window.location.reload();
     }
 
-    // useEffect(() => {
-        
-    // },[])
-    setTimeout(() => {
-        if(isAuthenticated){
-        console.log("ture",isAuthenticated)
-        navigate("/home")
-    }else{
-        navigate("/");
-    }
-    },2000)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          if(isAuthenticated){
+            console.log("ture",isAuthenticated)
+            navigate("/home")
+          }else{
+           navigate("/");
+          }
+        },2000)
+
+        return () => clearTimeout(timer);
+    },[isAuthenticated])
 
   return (
     <>
